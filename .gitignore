@@ -1,0 +1,46 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test output
+/test_output/
+/coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Configuration files (keep template)
+soroban-security-guard.toml
+!.soroban-security-guard.toml.example
+
+# Build artifacts
+/dist/
+/build/
+
+# Documentation
+/docs/book/
+
+# Security scan results
+*.security-report.json
+*.security-report.html
+*.security-report.sarif
+
+# Backup files
+*.bak
+*.backup

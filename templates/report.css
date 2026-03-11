@@ -1,0 +1,212 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.header p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.summary {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary h2 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.summary h3 {
+    margin: 20px 0 10px 0;
+    color: #34495e;
+}
+
+.summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary li {
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.summary li.critical {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.summary li.high {
+    background-color: #f39c12;
+    color: white;
+}
+
+.summary li.medium {
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+
+.summary li.low {
+    background-color: #27ae60;
+    color: white;
+}
+
+.issues {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.issues h2 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+}
+
+.issue {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    background-color: #f8f9fa;
+}
+
+.issue.critical {
+    border-left-color: #e74c3c;
+    background-color: #fdf2f2;
+}
+
+.issue.high {
+    border-left-color: #f39c12;
+    background-color: #fef9e7;
+}
+
+.issue.medium {
+    border-left-color: #f1c40f;
+    background-color: #fffbf0;
+}
+
+.issue.low {
+    border-left-color: #27ae60;
+    background-color: #f0f9f4;
+}
+
+.issue h3 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+}
+
+.issue p {
+    margin: 8px 0;
+}
+
+.issue p strong {
+    color: #2c3e50;
+}
+
+.issue p:has(strong:contains("Suggestion")) {
+    color: #27ae60;
+    font-style: italic;
+}
+
+.no-issues {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-issues h2 {
+    margin: 0;
+    color: #27ae60;
+    font-size: 2em;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .summary, .issues, .no-issues {
+        padding: 15px;
+    }
+}
+
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .header {
+        background: none !important;
+        color: black !important;
+        border: 2px solid #333;
+    }
+    
+    .summary, .issues {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .issue {
+        border: 1px solid #ddd;
+        background-color: white !important;
+    }
+    
+    .issue.critical {
+        border-left-color: #333 !important;
+    }
+    
+    .issue.high {
+        border-left-color: #666 !important;
+    }
+    
+    .issue.medium {
+        border-left-color: #999 !important;
+    }
+    
+    .issue.low {
+        border-left-color: #333 !important;
+    }
+}

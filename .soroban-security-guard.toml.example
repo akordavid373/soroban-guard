@@ -1,0 +1,91 @@
+# Soroban Security Guard Configuration File
+# Copy this file to soroban-security-guard.toml and customize as needed
+
+[scanner]
+# Minimum severity level to report (low, medium, high, critical)
+severity_threshold = "medium"
+
+# Output format (console, json, html, sarif)
+output_format = "console"
+
+# Maximum directory depth to scan (null for unlimited)
+max_depth = 10
+
+# File patterns to exclude from scanning
+exclude_patterns = [
+    "test_*",
+    "mock_*",
+    "*_test.rs",
+    "examples/*",
+    "target/*"
+]
+
+# File patterns to include (if empty, includes all .rs files)
+include_patterns = ["*.rs"]
+
+# Security rule configurations
+[rules.access_control]
+enabled = true
+strict_mode = false
+check_admin_functions = true
+check_owner_functions = true
+
+[rules.arithmetic]
+enabled = true
+check_overflow = true
+check_underflow = true
+safe_math_required = false
+
+[rules.reentrancy]
+enabled = true
+check_external_calls = true
+check_state_changes = true
+require_checks_effect = true
+
+[rules.token_safety]
+enabled = true
+check_erc20 = true
+check_erc721 = true
+check_approve_patterns = true
+
+[rules.state_management]
+enabled = true
+check_uninitialized_state = true
+check_race_conditions = true
+check_atomic_operations = true
+
+# Custom security rules
+[[rules.custom_rules]]
+name = "hardcoded_address"
+pattern = "0x[a-fA-F0-9]{40}"
+severity = "medium"
+description = "Potential hardcoded address detected"
+enabled = true
+
+[[rules.custom_rules]]
+name = "debug_statement"
+pattern = "println!|dbg!|eprintln!"
+severity = "low"
+description = "Debug statement found in production code"
+enabled = true
+
+[[rules.custom_rules]]
+name = "todo_comment"
+pattern = "TODO|FIXME|HACK"
+severity = "low"
+description = "Development comment found in production code"
+enabled = true
+
+[[rules.custom_rules]]
+name = "panic_statement"
+pattern = "panic!|unwrap\\(\\)"
+severity = "medium"
+description = "Potential panic statement that could cause contract to fail"
+enabled = true
+
+[[rules.custom_rules]]
+name = "random_usage"
+pattern = "rand|random"
+severity = "high"
+description = "Random number usage in smart contract context"
+enabled = true
