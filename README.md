@@ -1,4 +1,6 @@
-# Soroban Security Guard
+# soroban-guard
+
+🛡️  Soroban Security Guard - Automated Invariant Scanner for Soroban Smart Contracts
 
 An automated invariant scanner for Soroban smart contracts that identifies potential security vulnerabilities and invariant violations.
 
